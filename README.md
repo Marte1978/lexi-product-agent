@@ -1,6 +1,25 @@
 # Lexi Product Agent — Template
 
-Agente de voz LiveKit para landing pages de suplementos. Clona, configura `.env` y deploya en 5 minutos.
+Agente de voz LiveKit para landing pages de suplementos WebFactoryRD. Clonar, configurar `.env`, deployar en 5 minutos.
+
+## Sistema completo (3 piezas)
+
+| Pieza | Repo/Ubicación | Qué hace |
+|---|---|---|
+| **Este repo** (`lexi-product-agent`) | VPS Docker | Agente Python LiveKit — habla con el paciente |
+| **campana-candy** (`Marte1978/campana-candy`) | Vercel | Landing Next.js — formulario pre-llamada + token endpoint |
+| **campana-candy** — `JitsiCallButton` | mismo repo | Botón "hablar con asesor" — form lead + Jitsi + notify Telegram/WA |
+
+## Flujo completo de un lead
+
+```
+1. Persona llega a diabetes.webfactoryrd.com
+2. Hace clic en "Consulta con Dra. Lexi" o "Hablar con asesor"
+3. Formulario: nombre, provincia, WhatsApp (captura el lead)
+4. Se envía a Telegram + WhatsApp (notificación inmediata a Willy)
+5. Lexi conecta vía LiveKit (voz en tiempo real)
+6. Lexi guía al paciente hacia el producto específico de la página
+```
 
 ## Cómo clonar para un nuevo producto
 
